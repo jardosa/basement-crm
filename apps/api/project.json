@@ -33,6 +33,30 @@
           "buildTarget": "basement-crm:build:production"
         }
       }
+    },
+    "migrate-create": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node database/migrate create --name",
+        "cwd": "apps/api",
+        "parallel": false
+      }
+    },
+    "migrate-up": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node database/migrate up",
+        "cwd": "apps/api",
+        "parallel": false
+      }
+    },
+    "seed-up": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node database/seed",
+        "cwd": "apps/api",
+        "parallel": false
+      }
     }
   }
 }
